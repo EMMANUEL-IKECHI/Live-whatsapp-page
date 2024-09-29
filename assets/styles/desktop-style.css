@@ -6,6 +6,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --clr-lt: #e9edef;
+    --clr-dk: #202c33;
+    --clr-dkr: #111b21;
+    --clr-text-drk: #5587a0;
+    --clr-bright-green: #088d84;
+    --clr-dull-green: #0a332c;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 body {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,4 +27,98 @@ body {
 
 .desktop-extended {
     display: flex;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-dk);
+    height: 100vh;
+    width: 4em;
+    padding: 10px 20px;
+    position: fixed;
+    border-right: thin solid #2f3b43;
+}
+
+.sidebar img {
+    width: 2em;
+}
+
+.sidebar > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar .divider {
+    height: 3px;
+    width: 2em;
+    background-color: #4d565c;
+    margin: 10px 0;
+}
+
+.chat-section {
+    background-color: var(--clr-dkr);
+    color: var(--clr-lt);
+    margin-left: 4em;
+    width: 100%;
+    min-height: 100vh;
+    border-right: thin solid #2f3b43;
+}
+
+.chat-section .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 0 30px;
+}
+
+.chat-section .chat-header img,
+.chat-section form img,
+.chat-section .chat-categories img {
+    width: 2.2em;
+}
+
+.contact-chat {
+    min-height: 100vh;
+}
+
+.contact-chat header{
+    background-color: var(--clr-dk);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: var(--clr-lt);
+    height: 10vh;
+}
+
+.contact-chat header .contact-profile {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.contact-chat img {
+    width: 2em;
+}
+
+.contact-chat main {
+    color: var(--clr-lt);
+    background-image: url(../images/bg.jpg);
+    height: 80vh;
+    padding: 20px 40px;
+}
+
+.contact-chat footer {
+    background-color: var(--clr-dk);
+    height: 10vh;
 }
