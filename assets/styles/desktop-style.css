@@ -11,9 +11,10 @@
     --clr-lt: #e9edef;
     --clr-dk: #202c33;
     --clr-dkr: #111b21;
-    --clr-text-drk: #5587a0;
+    --clr-text-drk: #808e99;
     --clr-bright-green: #088d84;
     --clr-dull-green: #0a332c;
+    --clr-glow-green: #0a332c;
 }
 
 a {
@@ -88,7 +89,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    padding: 0 30px;
+    padding: 0 1.5em;
 }
 
 .chat-header .chat-options {
@@ -101,10 +102,63 @@ body {
     width: 3em;
 }
 
-.chat-section .chat-header img,
-.chat-section form img,
-.chat-section .chat-categories img {
+.chat-section .chat-header img {
     width: 1.8em;
+}
+.chat-section .search-bar img,
+.chat-section .chat-categories img {
+    width: 1.1em;
+}
+
+.search-bar {
+    background-color: var(--clr-dk);
+    margin: .5em .8em;
+    padding: 5px 1em;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.search-bar .search-icon {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    font-size: 1em;
+    outline: none;
+    border: none;
+    color: var(--clr-lt);
+    background-color: var(--clr-dk);
+    padding: 5px 0;
+}
+
+.search-bar input::placeholder {
+    color: var(--clr-text-drk);
+}
+
+.chat-categories {
+    margin-inline: 1em;
+    gap: .5em;
+    display: flex;
+}
+
+.chat-categories a {
+    background-color: var(--clr-dk);
+    color: var(--clr-text-drk);
+    height: 2em;
+    padding: 0.3em .7em;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 1em;
+}
+
+.chat-categories a:nth-child(1){
+    background-color: var(--clr-glow-green);
+    color: var(--clr-bright-green);
 }
 
 .contact-chat {
