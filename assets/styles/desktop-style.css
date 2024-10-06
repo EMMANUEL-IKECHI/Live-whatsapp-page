@@ -24,7 +24,8 @@ a {
 
 body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 2fr;
+    overflow: hidden;
 }
 
 .desktop-extended {
@@ -48,6 +49,14 @@ body {
     width: 1.7em;
 }
 
+.sidebar .settings-and-profile img {
+    width: 2em;
+}
+
+.sidebar .settings-and-profile .profile {
+    width: 3em;
+}
+
 .sidebar .nav-links,
 .sidebar .settings-and-profile {
     display: flex;
@@ -62,10 +71,23 @@ body {
 .sidebar > div > div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar > .nav-links > div {
     gap: 1.2em;
+}
+
+.sidebar .settings-and-profile {
+    gap: .5em;
+}
+
+.sidebar .primary-nav-links a:first-child {
+    background-color: #4d565c;
+    padding: .7em;
+    border-radius: 100%;
+    display: flex;
 }
 
 .sidebar .divider {
@@ -142,6 +164,7 @@ body {
     margin-inline: 1em;
     gap: .5em;
     display: flex;
+    margin-bottom: 2em;
 }
 
 .chat-categories a {
@@ -161,21 +184,61 @@ body {
     color: var(--clr-bright-green);
 }
 
-.contact-message {
-    display: grid;
+.chat-list {
+    overflow-y: scroll;
+    height: 70vh;
+    white-space: nowrap;
+    scrollbar-color: var(--clr-dk) var(--clr-dkr);
+}
+
+.chat-list img {
+    width: 3.5em;
+}
+
+.chat-list .contact-message-details {
+    display: flex;
+    align-items: center;
     gap: 1em;
+    padding-inline: 1em;
+    transition: background-color .05s linear;
 }
 
-.contact-message img {
-    width: 3em;
+.chat-list .contact-message-details:hover {
+    background-color: var(--clr-dk);
+    border-block: thin solid var(--clr-dk);
+    cursor: pointer;
 }
 
-.contact-message .contact-message-details {
+
+.contact-message-details > div:nth-child(2) {
+    display: grid;
+    gap: .5em;
+    padding-block: 1em;
+    border-top: thin solid #2f3b43;
+}
+
+.contact-message-details > div:nth-child(2):hover {
+    border: none;
+}
+
+.contact-name-and-time {
     display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 30vw;
 }
 
-.contact-message .contact-message-details div:nth-child(2) {
-    display: flex;
+.contact-message-details span {
+    font-size: .9em;
+    color: var(--clr-text-drk);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.contact-message-details .time {
+    font-size: .8em;
+    color: var(--clr-text-drk);
 }
 
 .contact-chat {
