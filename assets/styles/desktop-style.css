@@ -252,14 +252,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: .6em 1em;
     color: var(--clr-lt);
-    height: 10vh;
+    /* height: 10vh; */
 }
 
 .contact-chat header .contact-profile {
     display: inline-flex;
     gap: 10px;
+}
+
+.contact-name {
+    align-self: center;
+}
+
+.contact-chat header .contact-profile img {
+    width: 3em;
 }
 
 .contact-chat img {
@@ -273,9 +281,70 @@ body {
     padding: 20px 40px;
 }
 
+main {
+    display: grid;
+    overflow-y: scroll;
+    scrollbar-color: var(--clr-dk) transparent;
+}
+
+.contact-message, .user-message {
+    padding: 10px;
+    width: 40vw;
+    text-wrap: wrap;
+    position: relative;
+    border-radius: .3em;
+}
+
+.contact-message {
+    background-color: var(--clr-dk);
+    color: var(--clr-lt);
+    margin-block: .3em;
+    /* float: left; */
+    justify-self: start;
+}
+
+.user-message {
+    /* float: right; */
+    justify-self: end;
+    background-color: lightseagreen;
+    color: var(--clr-lt);
+    margin-block: .3em;
+
+}
+
+.day {
+    justify-self: center;
+    margin-block: 1em;
+}
+
 .contact-chat footer {
     background-color: var(--clr-dk);
-    height: 10vh;
+    /* height: 10vh; */
+    display: flex;
+    align-items: center;
+    padding: 1em 1em;
+}
+
+.message-input-bar {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.message-input-bar  input{
+    font-size: 1em;
+    outline: none;
+    border: none;
+    border-radius: .5em;
+    color: var(--clr-lt);
+    background-color: #4d565c;
+    color: var(--clr-lt);
+    padding: .6em 1em;
+    width: 50vw;
+}
+
+.message-input-bar input::placeholder {
+    color: var(--clr-text-drk);
 }
 
 @media only screen and (max-width: 600px) {
@@ -285,8 +354,7 @@ body {
     }
 
     body {
-        display: block;
-        overflow: hidden;
+        grid-template-columns: 1fr;
         background-color: var(--clr-dkr);
         width: 100vw;
     }
@@ -311,8 +379,7 @@ body {
 
     .contact-message, .user-message {
         padding: 10px;
-        width: 80vw;
-        border: thin solid white;
+        width: 60vw;
         text-wrap: wrap;
     }
     
@@ -322,5 +389,9 @@ body {
 
     .contact-name-and-time {
         width: 70vw;
+    }
+
+    .message-input-bar  input {
+        width: 100%;
     }
 }
