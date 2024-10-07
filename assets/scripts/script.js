@@ -19,5 +19,5 @@ exitChat.addEventListener("click", ()=> {
         // contactChat.style.width = "100vw";
         contactChat.style.left = "100%";
         contactChat.style.transition = "all linear .2s";
-        chatSection.style.transition = "all linear .3s .2s";
+        chatSection.style.transition = "all linear .3s";
 })
