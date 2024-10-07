@@ -275,3 +275,19 @@ body {
     background-color: var(--clr-dk);
     height: 10vh;
 }
+
+@media only screen and (max-width: 600px) {
+    .sidebar,
+    .contact-chat {
+        display: none;
+    }
+    
+    .chat-section {
+        width: 100vw;
+        margin: 0;
+    }
+
+    .contact-name-and-time {
+        width: auto;
+    }
+}
