@@ -30,6 +30,8 @@ body {
 
 .desktop-extended {
     display: flex;
+    transition: all linear 1s;
+    position: relative;
 }
 
 .sidebar {
@@ -277,16 +279,43 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    .sidebar,
-    .contact-chat {
+    
+    * {
+        /* border: thin solid white; */
+    }
+
+    body {
+        display: block;
+        overflow: hidden;
+        background-color: var(--clr-dkr);
+        width: 100vw;
+    }
+
+    .sidebar {
         display: none;
     }
     
-    .chat-section {
-        width: 100vw;
-        margin: 0;
+    .contact-chat {
+        left: 1000vw;
+        position: absolute;
+        transition: all ease-in-out .3s;
     }
 
+    .chat-section {
+        width: 100vw;
+        position: relative;
+        left: 0;
+        margin: 0;
+        transition: all linear .2s;
+    }
+
+    .contact-message, .user-message {
+        padding: 10px;
+        width: 80vw;
+        border: thin solid white;
+        text-wrap: wrap;
+    }
+    
     .chat-categories {
         overflow-x: scroll;
     }
